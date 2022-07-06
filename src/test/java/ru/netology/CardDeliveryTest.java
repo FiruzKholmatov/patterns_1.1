@@ -25,8 +25,6 @@ public class CardDeliveryTest {
     @Test
     public void shouldReschedule() {
 
-        Configuration.headless = true;
-
         UserData user = DataGenerator.generateUser();
 
         $("[data-test-id='city'] input").val(user.getCity());
