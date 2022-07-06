@@ -23,6 +23,7 @@ public class CardDeliveryTest {
 
     @Test
     public void shouldReschedule () {
+        Configuration.holdBrowserOpen = true;
         Configuration.headless = true;
 
         UserData user = DataGenerator.generateUser();
