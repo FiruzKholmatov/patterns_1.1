@@ -15,5 +15,5 @@ install:
 
 
 build_script:
-  - chmod +x gradlew
-  -./gradlew test -Dselenide.headless=true
+  - chmod +x gradlew # Для добавления прав на запуск файла gradlew, добавьте в CI исполнение команды chmod +x gradlew перед тем как использовать этот файл как команду для работы с гредлом.
+  - ./gradlew test --info -Dselenide.headless=true  # запускаем тест, флаг --info позволяет выводить больше информации
