@@ -19,11 +19,12 @@ public class CardDeliveryTest {
     public void setUp() {
 
         open("http://localhost:9999");
+
     }
 
     @Test
-    public void shouldReschedule () {
-        Configuration.holdBrowserOpen = true;
+    public void shouldReschedule() {
+
         Configuration.headless = true;
 
         UserData user = DataGenerator.generateUser();
@@ -45,7 +46,7 @@ public class CardDeliveryTest {
         $("[data-test-id='date'] input[class='input__control']").sendKeys(Keys.DELETE);
         $("[data-test-id='date'] input[class='input__control']").setValue(DataGenerator.generateDate(8));
         $(byText("Запланировать")).click();
-        $("[data-test-id='replan-notification']"). shouldBe(visible, Duration.ofSeconds(15));
+        $("[data-test-id='replan-notification']").shouldBe(visible, Duration.ofSeconds(15));
         $(byText("Перепланировать")).click();
         $("[data-test-id='success-notification'] div[class='notification__content']").
                 shouldBe(visible, Duration.ofSeconds(15)).should(text("Встреча успешно запланирована на " +
